@@ -11,8 +11,8 @@ fn main() {
     App::new()
         .insert_resource(WindowDescriptor {
             title: "I am a window!".to_string(),
-            width: 1600.,
-            height: 900.,
+            width: 800.,
+            height: 600.,
             present_mode: PresentMode::Fifo,
             ..default()
         })
@@ -31,7 +31,7 @@ fn setup(mut commands: Commands, asset_server: Res<AssetServer>, window: Res<Win
     commands.spawn_bundle(OrthographicCameraBundle::new_2d());
     let width = window.width;
     let height = window.height;
-    for _i in 0..50000 {
+    for _i in 0..10000 {
         let x: f32 = width * random::<f32>() - width / 2.0;
         let y: f32 = height * random::<f32>() - height / 2.0;
         let z: f32 = 5.0 * random::<f32>() - height / 2.5;
